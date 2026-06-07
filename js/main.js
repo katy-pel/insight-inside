@@ -1,6 +1,16 @@
 /* ============================================================
-   Insight Inside — main.js
+   Insight Inside — main.js (onepager v2.0)
    ============================================================ */
+
+/* --- KONFIGURACE -------------------------------------------
+   Vložte sem endpoint formulářové služby (Formspree / web3forms).
+   Příklad Formspree:  'https://formspree.io/f/xxxxxxxx'
+   Příklad web3forms:  'https://api.web3forms.com/submit'  (+ access_key níže)
+   Dokud je prázdný, formulář použije e-mailový (mailto) fallback.
+------------------------------------------------------------ */
+const FORM_ENDPOINT = '';                 // <-- doplní klient
+const WEB3FORMS_ACCESS_KEY = '';          // <-- jen pro web3forms
+const CONTACT_EMAIL = 'info@insight-inside.cz';
 
 /* --- Sticky Nav -------------------------------------------- */
 const nav = document.querySelector('.nav');
@@ -18,14 +28,16 @@ if (hamburger && mobileMenu) {
   hamburger.addEventListener('click', () => {
     const open = hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
   });
 
-  // Close on link click
+  // Zavřít po kliknutí na odkaz
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     });
   });
@@ -45,19 +57,16 @@ if (fadeEls.length) {
   fadeEls.forEach(el => observer.observe(el));
 }
 
-/* --- Active Nav Link --------------------------------------- */
-const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav__link').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPath || (currentPath === '' && href === 'index.html')) {
-    link.classList.add('active');
-  }
-});
-
-/* --- Smooth scroll for anchor links ----------------------- */
+/* --- Smooth scroll pro kotvy (offset pod sticky hlavičku) -- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const href = anchor.getAttribute('href');
+    if (href === '#') {                       // logo / "nahoru"
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       const offset = 80;
@@ -67,19 +76,92 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* --- Contact Form (mailto fallback) ------------------------ */
+/* --- Scrollspy: aktivní odkaz podle pozice ----------------- */
+const navLinks = Array.from(document.querySelectorAll('.nav__links .nav__link'));
+const spySections = navLinks
+  .map(link => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if (spySections.length) {
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link =>
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id)
+        );
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  spySections.forEach(sec => spy.observe(sec));
+}
+
+/* --- Kontaktní formulář ------------------------------------ */
 const form = document.querySelector('.contact-form');
 if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const name    = data.get('name')    || '';
-    const email   = data.get('email')   || '';
-    const phone   = data.get('phone')   || '';
-    const message = data.get('message') || '';
+  const status = form.querySelector('.form-status');
 
-    const body = `Jméno: ${name}\nE-mail: ${email}\nTelefon: ${phone}\n\nZpráva:\n${message}`;
-    const mailtoLink = `mailto:info@insight-inside.cz?subject=Poptávka z webu — ${name}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+  const showStatus = (msg, ok) => {
+    if (!status) return;
+    status.textContent = msg;
+    status.className = 'form-status is-visible ' + (ok ? 'form-status--ok' : 'form-status--error');
+  };
+
+  const buildMailto = (d) => {
+    const body =
+      `Jméno: ${d.name || ''}\n` +
+      `Firma: ${d.company || ''}\n` +
+      `E-mail: ${d.email || ''}\n` +
+      `Telefon: ${d.phone || ''}\n` +
+      `Typ poptávky: ${d.type || ''}\n\n` +
+      `Zpráva:\n${d.message || ''}`;
+    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Poptávka z webu — ' + (d.name || ''))}` +
+           `&body=${encodeURIComponent(body)}`;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Honeypot — pokud je vyplněn, tiše ignorovat (spam)
+    if (form.querySelector('[name="_gotcha"]')?.value) return;
+
+    // Nativní validace (required pole + souhlas)
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+
+    // Bez nakonfigurovaného endpointu → e-mailový fallback
+    if (!FORM_ENDPOINT) {
+      window.location.href = buildMailto(data);
+      showStatus('Otevíráme váš e-mailový klient s předvyplněnou zprávou…', true);
+      return;
+    }
+
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Odesílám…'; }
+
+    try {
+      if (WEB3FORMS_ACCESS_KEY) fd.append('access_key', WEB3FORMS_ACCESS_KEY);
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: fd,
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        showStatus('Děkujeme! Vaše poptávka byla odeslána. Ozveme se vám co nejdříve.', true);
+      } else {
+        throw new Error('Server vrátil chybu ' + res.status);
+      }
+    } catch (err) {
+      showStatus('Odeslání se nezdařilo. Zkuste to prosím znovu, nebo nám napište na ' + CONTACT_EMAIL + '.', false);
+    } finally {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+    }
   });
 }

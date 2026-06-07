@@ -3,275 +3,465 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insight Inside — Experti na vyhledávání specialistů</title>
-  <meta name="description" content="Insight Inside s.r.o. — recruitment, headhunting a tréninky pro firmy i kandidáty v oblasti financí, IT a obchodu. Praha.">
-  <meta property="og:title"       content="Insight Inside — Experti na vyhledávání specialistů">
-  <meta property="og:description" content="Pomáháme firmám najít správné lidi a kandidátům najít práci, která jim sedí. Diskrétně, efektivně, osobně.">
+
+  <title>Insight Inside — Executive Search & Specialised Recruitment</title>
+  <meta name="description" content="Insight Inside s.r.o. — executive search a vyhledávání specialistů s vysokou přidanou hodnotou. Boutique, diskrétní a osobní přístup. Praha 1.">
+  <link rel="canonical" href="https://katy-pel.github.io/insight-inside/">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Insight Inside — Executive Search & Specialised Recruitment">
+  <meta property="og:description" content="Správný člověk na správném místě promění celou firmu. Najdeme ho pro vás — diskrétně, osobně, s desítkami let znalosti trhu.">
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://katy-pel.github.io/insight-inside/">
   <meta property="og:locale"      content="cs_CZ">
+  <!-- PLACEHOLDER: og:image — doplnit náhledový obrázek 1200×630 px -->
+  <!-- <meta property="og:image" content="https://katy-pel.github.io/insight-inside/img/og-image.png"> -->
+
+  <!-- Twitter -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="Insight Inside — Experti na vyhledávání specialistů">
-  <meta name="twitter:description" content="Pomáháme firmám najít správné lidi a kandidátům najít práci, která jim sedí. Diskrétně, efektivně, osobně.">
+  <meta name="twitter:title"       content="Insight Inside — Executive Search & Specialised Recruitment">
+  <meta name="twitter:description" content="Správný člověk na správném místě promění celou firmu. Boutique executive search z Prahy.">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Fonts: Inter (nadpisy) + Source Sans 3 (text) — ROZHODNUTÍ K POTVRZENÍ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- NAVIGACE -->
+  <!-- ========================================================
+       NAVIGACE (sticky)
+  ========================================================= -->
   <nav class="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
-        Insight Inside
-        <span>Specialised Recruitment & Consulting</span>
+      <a href="#" class="nav__logo nav__logo--img" aria-label="Insight Inside — domů">
+        <img src="img/logo.png" alt="Insight Inside — Specialised Recruitment & Consulting"
+             width="923" height="350">
       </a>
       <div class="nav__links">
-        <a href="pro-firmy.html"      class="nav__link">Pro firmy</a>
-        <a href="pro-kandidaty.html"  class="nav__link">Pro kandidáty</a>
-        <a href="volne-pozice.html"   class="nav__link">Volné pozice</a>
-        <a href="o-nas.html"          class="nav__link">O nás</a>
-        <a href="kontakt.html"        class="btn btn--primary btn--sm nav__cta">Kontaktujte nás</a>
+        <a href="#proc"      class="nav__link">Proč my</a>
+        <a href="#jak"       class="nav__link">Jak pracujeme</a>
+        <a href="#realizace" class="nav__link">Realizace</a>
+        <a href="#reference" class="nav__link">Reference</a>
+        <a href="#o-nas"     class="nav__link">O nás</a>
+        <a href="#kontakt"   class="btn btn--primary btn--sm nav__cta">Poptat spolupráci</a>
       </div>
-      <button class="nav__hamburger" aria-label="Menu">
+      <button class="nav__hamburger" aria-label="Otevřít menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile menu -->
+  <!-- Mobilní menu -->
   <div class="nav__mobile">
-    <a href="pro-firmy.html"     class="nav__link">Pro firmy</a>
-    <a href="pro-kandidaty.html" class="nav__link">Pro kandidáty</a>
-    <a href="volne-pozice.html"  class="nav__link">Volné pozice</a>
-    <a href="o-nas.html"         class="nav__link">O nás</a>
-    <a href="kontakt.html"       class="btn btn--primary">Kontaktujte nás</a>
+    <a href="#proc"      class="nav__link">Proč my</a>
+    <a href="#jak"       class="nav__link">Jak pracujeme</a>
+    <a href="#realizace" class="nav__link">Realizace</a>
+    <a href="#reference" class="nav__link">Reference</a>
+    <a href="#o-nas"     class="nav__link">O nás</a>
+    <a href="#kontakt"   class="btn btn--primary">Poptat spolupráci</a>
   </div>
 
+  <main>
+
   <!-- ========================================================
-       HERO
+       HERO  ·  PROČ (Why) — přesvědčení
   ========================================================= -->
   <section class="hero">
     <div class="container">
       <div class="hero__content">
-        <span class="hero__label">Praha · Finance · IT · Obchod</span>
-        <h1>Experti na vyhledávání&nbsp;specialistů.</h1>
+        <span class="hero__brandline">Executive Search &amp; Specialised Recruitment</span>
+        <h1>Správný člověk na správném místě <span class="text-accent">promění celou firmu.</span></h1>
         <p class="hero__perex">
-          Pomáháme firmám najít správné lidi a kandidátům najít práci, která jim sedí.
-          Diskrétně, efektivně, osobně.
+          Vidíme potenciál a souvislosti, které ostatní přehlédnou — protože
+          <strong>„Insight Inside"</strong> znamená vhled do podstaty. Najdeme vám člověka,
+          který vaši firmu posune dál. Diskrétně, osobně, s desítkami let znalosti trhu.
         </p>
         <div class="btn-group">
-          <a href="pro-firmy.html"     class="btn btn--primary">Hledám kandidáta</a>
-          <a href="pro-kandidaty.html" class="btn btn--outline">Hledám práci</a>
+          <a href="#kontakt" class="btn btn--primary">Poptat spolupráci</a>
+          <a href="#jak"     class="btn btn--outline">Jak pracujeme</a>
         </div>
       </div>
     </div>
     <div class="hero__deco"></div>
-    <div class="hero__scroll">
+    <a href="#proc" class="hero__scroll" aria-label="Posunout na obsah">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </div>
+    </a>
   </section>
 
   <!-- ========================================================
        TRUST BAR
+       PLACEHOLDER: čísla jsou orientační a je třeba je SLADIT a POTVRDIT.
+       Pozn.: zkušenost konzultanta je od roku 1998 (≈ od té doby na trhu),
+       což je jiný údaj než stáří firmy. K ověření s klientem.
   ========================================================= -->
   <section class="trust-bar">
     <div class="container">
-      <div class="trust-bar__grid">
+      <div class="trust-bar__grid is-placeholder">
         <div class="trust-bar__item fade-in">
-          <div class="trust-bar__number">15+</div>
-          <div class="trust-bar__label">let na trhu</div>
+          <div class="trust-bar__number">od 1998</div>
+          <div class="trust-bar__label">na trhu práce</div>
         </div>
         <div class="trust-bar__item fade-in fade-in--delay-1">
-          <div class="trust-bar__number">300+</div>
+          <div class="trust-bar__number">stovky+</div>
           <div class="trust-bar__label">obsazených pozic</div>
         </div>
         <div class="trust-bar__item fade-in fade-in--delay-2">
-          <div class="trust-bar__number">80+</div>
+          <div class="trust-bar__number">desítky</div>
           <div class="trust-bar__label">spokojených klientů</div>
         </div>
         <div class="trust-bar__item fade-in fade-in--delay-3">
-          <div class="trust-bar__number">92 %</div>
-          <div class="trust-bar__label">úspěšnost obsazení</div>
+          <div class="trust-bar__number">1 : 1</div>
+          <div class="trust-bar__label">osobní konzultant</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       CO DĚLÁME
+       PROČ (Why) — přesvědčení rozvedené
   ========================================================= -->
-  <section class="section section--white">
+  <section id="proc" class="section section--white">
     <div class="container">
       <div class="section__header--center fade-in">
-        <span class="section__label">Naše služby</span>
-        <h2>Jak vám pomůžeme</h2>
-        <p class="lead">Dvě klíčové oblasti, ve kterých vynikáme a přinášíme klientům jasnou přidanou hodnotu.</p>
+        <span class="section__label">Proč my</span>
+        <h2>Věříme v sílu správného člověka</h2>
       </div>
-      <div class="grid-2">
-        <div class="service-card fade-in">
-          <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-          <h3>Recruitment & Headhunting</h3>
-          <p style="color:var(--text-muted);margin-bottom:var(--sp-sm)">
-            Vyhledáváme a umísťujeme kandidáty na pozice středního a vyššího managementu
-            a specialisty v oblasti financí, IT a obchodu. Disponujeme ojedinělým know-how
-            a mezinárodními zkušenostmi.
-          </p>
-          <ul>
-            <li>Aktivní vyhledávání kandidátů</li>
-            <li>Diskrétní přístup a ochrana dat</li>
-            <li>Předvýběr a pohovory za vás</li>
-            <li>Poradenství v oblasti mezd a náboru</li>
-          </ul>
-          <a href="pro-firmy.html" class="card__link">Zjistit více <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
+      <div class="why-statement fade-in">
+        <p>
+          Jeden správně obsazený člověk dokáže nastartovat tým, zachránit projekt
+          nebo otevřít firmě nový trh. Proto k hledání nepřistupujeme jako k vyplňování
+          tabulky — hledáme vhled do toho, koho a proč firma skutečně potřebuje.
+        </p>
+        <p class="why-sub">
+          Insight Inside je boutique — osobní práce jednoho zkušeného konzultanta,
+          ne anonymní agentura. Bereme zakázku jen tehdy, když ji umíme dotáhnout
+          do konce. A umíme otočit i to, co vypadá jako nevýhoda, ve váš náskok.
+        </p>
+      </div>
+
+      <div class="diff-grid">
+        <div class="diff-item fade-in">
+          <div class="diff-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <h4>Boutique, osobní přístup</h4>
+            <p>Jednáte přímo se zkušeným konzultantem, který vede vaši zakázku od začátku do konce.</p>
+          </div>
         </div>
-        <div class="service-card fade-in fade-in--delay-1">
-          <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-          <h3>Tréninky & Poradenství</h3>
-          <p style="color:var(--text-muted);margin-bottom:var(--sp-sm)">
-            Nabízíme tréninkové programy a poradenské služby zaměřené na rozvoj potenciálu
-            vašich lidí — od Assessment Centre přes manažerské dovednosti až po obchodní tréninky.
-          </p>
-          <ul>
-            <li>Assessment a Development Centre</li>
-            <li>360° zpětná vazba</li>
-            <li>Manažerské techniky a leadership</li>
-            <li>Obchodní dovednosti a psychologie prodeje</li>
-          </ul>
-          <a href="pro-firmy.html#treninky" class="card__link">Zjistit více <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="diff-item fade-in fade-in--delay-1">
+          <div class="diff-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <div>
+            <h4>Diskrétní aktivní vyhledávání</h4>
+            <p>Cíleně oslovujeme i pasivní kandidáty. Žádná plošná inzerce, žádné riziko úniku.</p>
+          </div>
+        </div>
+        <div class="diff-item fade-in fade-in--delay-2">
+          <div class="diff-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </div>
+          <div>
+            <h4>Desítky let znalosti trhu</h4>
+            <p>Známe lidi, firmy a souvislosti, ke kterým se nový hráč na trhu nedostane.</p>
+          </div>
+        </div>
+        <div class="diff-item fade-in">
+          <div class="diff-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          </div>
+          <div>
+            <h4>Nejdřív pochopit, pak hledat</h4>
+            <p>Do hloubky poznáme roli i firemní kulturu. Teprve pak začínáme vyhledávat.</p>
+          </div>
+        </div>
+        <div class="diff-item fade-in fade-in--delay-1">
+          <div class="diff-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <h4>Nevýhody otáčíme ve výhody</h4>
+            <p>I těžko obsaditelnou roli umíme zrámovat tak, aby přitáhla ty správné lidi.</p>
+          </div>
+        </div>
+        <div class="diff-item fade-in fade-in--delay-2">
+          <div class="diff-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.66 0 3.22.45 4.56 1.24"/></svg>
+          </div>
+          <div>
+            <h4>Bereme jen to, co dotáhneme</h4>
+            <p>Zakázku přijmeme, jen když věříme, že ji umíme dovést až k úspěšnému obsazení.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       JAK PRACUJEME
+       JAK (How) — způsob práce
   ========================================================= -->
-  <section class="section">
+  <section id="jak" class="section">
     <div class="container">
       <div class="section__header--center fade-in">
-        <span class="section__label">Proces</span>
-        <h2>Jak pracujeme</h2>
-        <p class="lead">Čtyři kroky, díky nimž obsadíme i nejnáročnější pozice.</p>
+        <span class="section__label">Jak pracujeme</span>
+        <h2>Čtyři kroky k tomu pravému</h2>
+        <p class="lead">Proces, díky kterému obsadíme i náročné a nestandardní role.</p>
       </div>
       <div class="steps">
         <div class="step fade-in">
           <div class="step__number">01</div>
-          <div class="step__title">Poznáme vaše potřeby</div>
-          <p class="step__text">Nejdříve důkladně porozumíme situaci, pozici a firemní kultuře. Řešení navrhujeme až na základě tohoto pochopení.</p>
+          <div class="step__title">Poznáme potřebu</div>
+          <p class="step__text">Do hloubky pochopíme roli, firmu i kulturu. Hledat začínáme až tehdy, když víme koho a proč.</p>
         </div>
         <div class="step fade-in fade-in--delay-1">
           <div class="step__number">02</div>
-          <div class="step__title">Vyhledáme kandidáty</div>
-          <p class="step__text">Aktivně oslovujeme vhodné kandidáty z naší sítě i mimo ni. Diskrétně a cíleně, bez zbytečné inzerce.</p>
+          <div class="step__title">Vyhledáme</div>
+          <p class="step__text">Diskrétní aktivní search. Cíleně oslovujeme i kandidáty, kteří práci aktivně nehledají.</p>
         </div>
         <div class="step fade-in fade-in--delay-2">
           <div class="step__number">03</div>
-          <div class="step__title">Provedeme předvýběr</div>
-          <p class="step__text">Kandidáty prověříme, pohovorujeme a předložíme vám shortlist těch nejlepších. Šetříme váš čas.</p>
+          <div class="step__title">Předvýběr</div>
+          <p class="step__text">Kandidáty prověříme a vyzpovídáme. Předložíme vám shortlist těch skutečně relevantních.</p>
         </div>
         <div class="step fade-in fade-in--delay-3">
           <div class="step__number">04</div>
           <div class="step__title">Doprovázíme až do konce</div>
-          <p class="step__text">Pomáháme s výběrovými koly, nástupem i adaptací. Záleží nám na dlouhodobém úspěchu spolupráce.</p>
+          <p class="step__text">Pomáháme s nabídkou, nástupem i adaptací. Záleží nám na dlouhodobém úspěchu spolupráce.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SPECIALIZACE (Bento grid)
+       CO (What) — služba
   ========================================================= -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section__header fade-in">
-        <span class="section__label">Specializace</span>
-        <h2>Na co se zaměřujeme</h2>
-      </div>
-      <div class="bento">
-        <!-- Large — Recruitment -->
-        <div class="bento__item bento__item--large fade-in">
-          <svg class="bento__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-          <h3 style="font-size:1.6rem;margin-bottom:var(--sp-sm)">Recruitment<br>&amp; Headhunting</h3>
-          <p style="font-size:1rem;line-height:1.65;margin-bottom:var(--sp-md)">
-            Vyhledáváme střední a vyšší management a specialisty napříč odvětvími.
-            Jsme specialisté na vyhledávání specialistů.
-          </p>
-          <a href="pro-firmy.html" class="card__link">Více o službě <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-        <!-- Finance -->
-        <div class="bento__item fade-in fade-in--delay-1">
-          <svg class="bento__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>
-          </svg>
-          <h3>Finance a účetnictví</h3>
-          <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:var(--sp-sm)">Finanční ředitelé, manažeři, kontroloři, auditoři, účetní.</p>
-          <a href="pro-firmy.html#finance" class="card__link">Pozice <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-        <!-- IT -->
-        <div class="bento__item fade-in fade-in--delay-2">
-          <svg class="bento__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-          </svg>
-          <h3>Informační technologie</h3>
-          <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:var(--sp-sm)">IT management, vývojáři, architekti, síťoví specialisté.</p>
-          <a href="pro-firmy.html#it" class="card__link">Pozice <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-        <!-- Obchod -->
-        <div class="bento__item fade-in fade-in--delay-1">
-          <svg class="bento__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-          </svg>
-          <h3>Obchod a marketing</h3>
-          <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:var(--sp-sm)">Obchodní ředitelé, manažeři, brand a produktoví manažeři.</p>
-          <a href="pro-firmy.html#obchod" class="card__link">Pozice <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-        <!-- Tréninky -->
-        <div class="bento__item fade-in fade-in--delay-2">
-          <svg class="bento__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-          </svg>
-          <h3>Poradenství a tréninky</h3>
-          <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:var(--sp-sm)">Assessment Centre, manažerské a obchodní dovednosti.</p>
-          <a href="pro-firmy.html#treninky" class="card__link">Programy <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       TÝM
-  ========================================================= -->
-  <section class="section section--white">
+  <section id="co" class="section section--white">
     <div class="container">
       <div class="section__header--center fade-in">
-        <span class="section__label">Kdo jsme</span>
+        <span class="section__label">Co děláme</span>
+        <h2>Vyhledáváme lidi s vysokou přidanou hodnotou</h2>
+        <p class="lead">Zaměřujeme se tam, kde záleží na každém jednotlivém obsazení.</p>
+      </div>
+      <div class="grid-2">
+        <div class="service-card fade-in">
+          <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2 4 7v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-5z"/><path d="m9 12 2 2 4-4"/>
+          </svg>
+          <h3>Executive Search</h3>
+          <p style="color:var(--text-muted);margin-bottom:var(--sp-sm)">
+            Diskrétní vyhledávání top managementu a klíčových vedoucích rolí.
+            Tam, kde nesmíte sáhnout vedle a kde se hledá přímým, cíleným oslovením.
+          </p>
+          <ul>
+            <li>Vrcholový a střední management</li>
+            <li>Strategicky kritické pozice</li>
+            <li>Plná diskrétnost a ochrana dat</li>
+            <li>Přímé oslovení nejlepších na trhu</li>
+          </ul>
+        </div>
+        <div class="service-card fade-in fade-in--delay-1">
+          <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <h3>Vyhledávání specialistů</h3>
+          <p style="color:var(--text-muted);margin-bottom:var(--sp-sm)">
+            Specializované a těžko obsaditelné odborné role — i takové, které dosud
+            neexistovaly. Najdeme experty, které trh běžně nenabízí.
+          </p>
+          <ul>
+            <li>Vzácné a úzce profilované expertízy</li>
+            <li>Nově vznikající a netypické pozice</li>
+            <li>Předvýběr a odborné posouzení</li>
+            <li>Doprovod až do nástupu a adaptace</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CO (What) — DŮKAZY · Vybrané realizace
+       Pozn.: realizace vycházejí z reálných projektů konzultanta.
+       PLACEHOLDER: konkrétní formulace, názvy a čísla NECHAT POTVRDIT klientem.
+  ========================================================= -->
+  <section id="realizace" class="section section--alt">
+    <div class="container">
+      <div class="section__header--center fade-in">
+        <span class="section__label">Vybrané realizace</span>
+        <h2>Důkaz, ne sliby</h2>
+        <p class="lead">Několik příkladů obsazení, na kterých stavíme svou reputaci.
+          <span class="ph-text">Konkrétní detaily k potvrzení klientem.</span></p>
+      </div>
+      <div class="case-grid">
+        <div class="case-card fade-in">
+          <span class="case-card__tag">Unikátní role</span>
+          <h3>SCADA Engineer do kybernetické arény</h3>
+          <p>Obsazení pozice, která do té doby na trhu neexistovala — specialista do arény
+            pro simulaci hackerských útoků. Roli jsme pomohli definovat i najít.</p>
+        </div>
+        <div class="case-card fade-in fade-in--delay-1">
+          <span class="case-card__tag">Relokace &amp; náběr</span>
+          <h3>Přesun centrály z Belgie do ČR</h3>
+          <p>Relokace centrály a top managementu ze zahraničí a obsazení desítek pozic
+            během několika málo měsíců.</p>
+        </div>
+        <div class="case-card fade-in fade-in--delay-2">
+          <span class="case-card__tag">Rozjezd pobočky</span>
+          <h3>Česká pobočka od prvního zaměstnance</h3>
+          <p>Podpora rozjezdu české pobočky zahraniční firmy — od úplně prvního člověka
+            až po vybudovaný tým o desítkách lidí.</p>
+        </div>
+        <div class="case-card fade-in fade-in--delay-3">
+          <span class="case-card__tag">Znalost trhu</span>
+          <h3>Stovky obsazených kandidátů</h3>
+          <p>Za kariéru stovky až tisíce obsazených lidí napříč obory — a s nimi mapa trhu,
+            kterou nový hráč nemá jak získat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       REFERENCE — LinkedIn doporučení
+       PLACEHOLDER: nahradit reálnými doporučeními (3–6) z LinkedInu.
+  ========================================================= -->
+  <section id="reference" class="section section--white">
+    <div class="container">
+      <div class="section__header--center fade-in">
+        <span class="section__label">Reference</span>
+        <h2>Co o nás říkají na LinkedInu</h2>
+        <p class="lead">Doporučení od lidí, se kterými jsme spolupracovali.</p>
+      </div>
+      <div class="li-grid">
+        <!-- LinkedIn doporučení #1 -->
+        <div class="li-card is-placeholder fade-in">
+          <svg class="li-card__in" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <div class="li-card__head">
+            <div class="li-card__avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <div class="li-card__name">Jméno Příjmení</div>
+              <div class="li-card__role">Pozice · Firma</div>
+            </div>
+          </div>
+          <p class="li-card__text">
+            Sem patří reálné doporučení z LinkedInu. Text okopírovat tak, jak ho napsal
+            doporučující — autenticita je tu nejdůležitější.
+          </p>
+          <div class="li-card__foot">Doporučení na LinkedInu</div>
+        </div>
+
+        <!-- LinkedIn doporučení #2 -->
+        <div class="li-card is-placeholder fade-in fade-in--delay-1">
+          <svg class="li-card__in" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <div class="li-card__head">
+            <div class="li-card__avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <div class="li-card__name">Jméno Příjmení</div>
+              <div class="li-card__role">Pozice · Firma</div>
+            </div>
+          </div>
+          <p class="li-card__text">
+            Druhé doporučení. Ideálně od člověka z jiné branže nebo role, aby reference
+            ukázaly šíři spolupráce — klient i kandidát.
+          </p>
+          <div class="li-card__foot">Doporučení na LinkedInu</div>
+        </div>
+
+        <!-- LinkedIn doporučení #3 -->
+        <div class="li-card is-placeholder fade-in fade-in--delay-2">
+          <svg class="li-card__in" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <div class="li-card__head">
+            <div class="li-card__avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <div class="li-card__name">Jméno Příjmení</div>
+              <div class="li-card__role">Pozice · Firma</div>
+            </div>
+          </div>
+          <p class="li-card__text">
+            Třetí doporučení. Klidně doplnit až o šesté — bloky se přirozeně zalomí
+            do mřížky pod sebe.
+          </p>
+          <div class="li-card__foot">Doporučení na LinkedInu</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       REFERENCE — textové citáty (mimo LinkedIn)
+       PLACEHOLDER: doplnit reálné citáty klientů.
+  ========================================================= -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__header--center fade-in">
+        <span class="section__label section__label--light">Slovy klientů</span>
+        <h2 style="color:var(--text-light)">Důvěra, která se vrací</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card card--dark is-placeholder fade-in">
+          <div class="card__quote">"</div>
+          <p class="card__text">Sem patří reálný citát klienta. Krátký, konkrétní, vlastními slovy — působí
+            silněji než dlouhé chvály.</p>
+          <div class="card__author">Jméno Příjmení</div>
+          <div class="card__company">Pozice, Firma</div>
+        </div>
+        <div class="card card--dark is-placeholder fade-in fade-in--delay-1">
+          <div class="card__quote">"</div>
+          <p class="card__text">Druhý citát. Ideálně zmiňující konkrétní přínos — rychlost, kvalitu shortlistu
+            nebo nestandardní roli, kterou se podařilo obsadit.</p>
+          <div class="card__author">Jméno Příjmení</div>
+          <div class="card__company">Pozice, Firma</div>
+        </div>
+        <div class="card card--dark is-placeholder fade-in fade-in--delay-2">
+          <div class="card__quote">"</div>
+          <p class="card__text">Třetí citát, klidně z pohledu úspěšně umístěného kandidáta — ukáže obě strany
+            spolupráce.</p>
+          <div class="card__author">Jméno Příjmení</div>
+          <div class="card__company">Pozice</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       O NÁS · Váš konzultant
+  ========================================================= -->
+  <section id="o-nas" class="section section--white">
+    <div class="container">
+      <div class="section__header--center fade-in">
+        <span class="section__label">O nás</span>
         <h2>Váš konzultant</h2>
       </div>
       <div class="team-card fade-in">
-        <div class="team-card__photo">
-          <!-- PLACEHOLDER: nahradit reálnou fotografií -->
+        <!-- PLACEHOLDER: nahradit reálnou profesionální fotografií Petra -->
+        <div class="team-card__photo ph-photo is-placeholder">
           <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
           </svg>
         </div>
         <div class="team-card__body">
-          <h3 class="team-card__name">Mgr. Petr Mutinský</h3>
-          <div class="team-card__role">Ředitel & konzultant</div>
+          <!-- K OVĚŘENÍ: správný pravopis příjmení — „Mutínský" vs „Mutinský". Sjednotit. -->
+          <h3 class="team-card__name">Mgr. Petr Mutínský</h3>
+          <div class="team-card__role">Ředitel &amp; konzultant</div>
           <p class="team-card__bio">
-            <!-- PLACEHOLDER: doplnit reálné bio -->
-            Petr se věnuje personálnímu poradenství a vyhledávání kandidátů s více než patnáctiletou praxí.
-            Specializuje se na finance, IT a obchod. Věří, že kvalitní spolupráce začíná pochopením
-            — proto každé partnerství staví na důkladném poznání potřeb klienta i kandidáta.
+            <!-- PLACEHOLDER: doplnit reálné bio (3–4 věty, osobní příběh, zkušenosti od r. 1998) -->
+            Personálnímu poradenství a executive search se věnuje od roku 1998. Za tu dobu
+            obsadil stovky pozic napříč obory — od běžných specialistů po role, které do té
+            doby neexistovaly. Věří, že dobrá spolupráce začíná pochopením: proto každé
+            partnerství staví na důkladném poznání potřeb klienta i kandidáta.
           </p>
           <div class="team-card__contacts">
             <a href="tel:+420774826296" class="team-card__contact">
@@ -289,81 +479,107 @@
   </section>
 
   <!-- ========================================================
-       REFERENCE
+       KONTAKT (hlavní konverzní sekce)
   ========================================================= -->
-  <section class="section section--dark">
+  <section id="kontakt" class="section section--alt">
     <div class="container">
       <div class="section__header--center fade-in">
-        <span class="section__label section__label--light">Reference</span>
-        <h2 style="color:var(--text-light)">Co říkají naši klienti</h2>
+        <span class="section__label">Kontakt</span>
+        <h2>Pojďme najít vašeho člověka</h2>
+        <p class="lead">Napište nám nebo zavolejte. První konzultace je vždy nezávazná.</p>
       </div>
-      <div class="grid-3">
-        <div class="card card--dark fade-in">
-          <div class="card__quote">"</div>
-          <p class="card__text">
-            <!-- PLACEHOLDER: doplnit reálný citát -->
-            Spolupráce s Insight Inside předčila naše očekávání. Kandidáti, které nám Petr představil,
-            přesně odpovídali tomu, co jsme hledali — nejen po odborné stránce, ale i lidsky.
-          </p>
-          <div class="card__author">PLACEHOLDER: Jméno Příjmení</div>
-          <div class="card__company">HR Director, Firma s.r.o.</div>
+
+      <div class="contact-grid">
+        <!-- Poptávkový formulář -->
+        <div class="fade-in">
+          <!-- KONFIGURACE: nastavte FORM_ENDPOINT v js/main.js (Formspree / web3forms).
+               Dokud je prázdný, odeslání použije e-mailový (mailto) fallback. -->
+          <form class="contact-form" novalidate>
+            <div class="form-status" role="status" aria-live="polite"></div>
+
+            <div class="grid-2" style="gap:var(--sp-sm)">
+              <div class="form-group">
+                <label for="name">Jméno a příjmení *</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="company">Firma</label>
+                <input type="text" id="company" name="company" autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap:var(--sp-sm)">
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="type">Typ poptávky *</label>
+              <select id="type" name="type" required>
+                <option value="" disabled selected>Vyberte…</option>
+                <option value="Hledám kandidáta">Hledám kandidáta</option>
+                <option value="Konzultace">Konzultace</option>
+                <option value="Jiné">Jiné</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Zpráva</label>
+              <textarea id="message" name="message" placeholder="Stručně popište pozici nebo váš dotaz…"></textarea>
+            </div>
+
+            <!-- Honeypot proti spamu — necháváme prázdné, skryté -->
+            <div style="position:absolute;left:-9999px" aria-hidden="true">
+              <label>Nevyplňujte <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="form-group form-group--checkbox">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">Souhlasím se zpracováním osobních údajů pro účely vyřízení mé poptávky.
+                Více v <a href="#" rel="nofollow">Ochraně osobních údajů</a>. <!-- PLACEHOLDER: odkaz na GDPR --></label>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
+          </form>
         </div>
-        <div class="card card--dark fade-in fade-in--delay-1">
-          <div class="card__quote">"</div>
-          <p class="card__text">
-            <!-- PLACEHOLDER: doplnit reálný citát -->
-            Oceňuji profesionální přístup a otevřenou komunikaci. Na rozdíl od jiných agentur
-            jsme dostali skutečně relevantní shortlist, ne záplavu nevhodných životopisů.
-          </p>
-          <div class="card__author">PLACEHOLDER: Jméno Příjmení</div>
-          <div class="card__company">CEO, Firma a.s.</div>
-        </div>
-        <div class="card card--dark fade-in fade-in--delay-2">
-          <div class="card__quote">"</div>
-          <p class="card__text">
-            <!-- PLACEHOLDER: doplnit reálný citát -->
-            Jako kandidát jsem ocenil, že mě konzultant skutečně vyslechl a porozuměl,
-            co hledám. Příprava na pohovor, zpětná vazba — vše na vysoké úrovni.
-          </p>
-          <div class="card__author">PLACEHOLDER: Jméno Příjmení</div>
-          <div class="card__company">Finance Manager</div>
+
+        <!-- Přímé kontakty (alternativa k formuláři) -->
+        <div class="contact-info contact-info--card fade-in fade-in--delay-1">
+          <h3>Insight Inside s.r.o.</h3>
+          <div class="contact-info__items">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+420257224518">+420 257 224 518</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+420774826296">+420 774 826 296</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@insight-inside.cz">info@insight-inside.cz</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Národní 339/11, 110 00 Praha 1</span>
+            </div>
+          </div>
+          <div class="directions">
+            <h4>První konzultace nezávazně</h4>
+            <p>Ozvěte se s pozicí nebo dotazem — ozveme se zpět a probereme, jak vám můžeme pomoci.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================
-       KONTAKT (homepage)
-  ========================================================= -->
-  <section class="section">
-    <div class="container">
-      <div class="contact-simple fade-in">
-        <div>
-          <span class="section__label">Kontakt</span>
-          <h2>Pojďme si popovídat</h2>
-          <p class="lead" style="max-width:460px;margin-top:var(--sp-sm)">
-            Rádi vás osobně navštívíme a představíme vám naše služby.
-            Ozvěte se — první konzultace je vždy nezávazná.
-          </p>
-        </div>
-        <div class="contact-simple__info">
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+420257224518">+420 257 224 518</a>
-          </div>
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <a href="mailto:info@insight-inside.cz">info@insight-inside.cz</a>
-          </div>
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Národní 339/11, 110 00 Praha 1</span>
-          </div>
-          <a href="kontakt.html" class="btn btn--primary" style="margin-top:var(--sp-sm)">Napsat zprávu</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ========================================================
        FOOTER
@@ -372,11 +588,11 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="index.html" class="nav__logo" style="margin-bottom:var(--sp-sm);display:inline-flex">
-            Insight Inside
-            <span>Specialised Recruitment & Consulting</span>
-          </a>
-          <p class="footer__tagline">Pomáháme firmám najít správné lidi a kandidátům najít správnou práci.</p>
+          <div class="footer__logo-chip">
+            <img src="img/logo.png" alt="Insight Inside — Specialised Recruitment & Consulting"
+                 width="923" height="350" loading="lazy">
+          </div>
+          <p class="footer__tagline">Executive Search &amp; Specialised Recruitment. Správný člověk na správném místě promění celou firmu.</p>
           <div class="footer__contact">
             <a href="tel:+420257224518">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -395,26 +611,27 @@
         <div class="footer__col">
           <h4>Navigace</h4>
           <div class="footer__links">
-            <a href="pro-firmy.html">Pro firmy</a>
-            <a href="pro-kandidaty.html">Pro kandidáty</a>
-            <a href="volne-pozice.html">Volné pozice</a>
-            <a href="o-nas.html">O nás</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="#proc">Proč my</a>
+            <a href="#jak">Jak pracujeme</a>
+            <a href="#realizace">Realizace</a>
+            <a href="#reference">Reference</a>
+            <a href="#o-nas">O nás</a>
+            <a href="#kontakt">Kontakt</a>
           </div>
         </div>
         <div class="footer__col">
-          <h4>Specializace</h4>
+          <h4>Insight Inside s.r.o.</h4>
           <div class="footer__links">
-            <a href="pro-firmy.html#finance">Finance a účetnictví</a>
-            <a href="pro-firmy.html#it">Informační technologie</a>
-            <a href="pro-firmy.html#obchod">Obchod a marketing</a>
-            <a href="pro-firmy.html#treninky">Poradenství a tréninky</a>
+            <span style="font-size:0.875rem;color:var(--text-faint)">IČ: 27575012</span>
+            <span style="font-size:0.875rem;color:var(--text-faint)">Licence MPSV č. 00027621</span>
+            <span style="font-size:0.875rem;color:var(--text-faint)">Národní 339/11, 110 00 Praha 1</span>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <span class="footer__copy">© 2025 Insight Inside s.r.o. · IČ: 27575012 · Licence MPSV č. 00027621</span>
-        <a href="kontakt.html" style="font-size:0.8rem;color:#6b6159">Ochrana osobních údajů</a>
+        <span class="footer__copy">© 2026 Insight Inside s.r.o. · Všechna práva vyhrazena</span>
+        <!-- PLACEHOLDER: doplnit stránku/odkaz na ochranu osobních údajů (GDPR) -->
+        <a href="#" style="font-size:0.8rem;color:#6f8597" rel="nofollow">Ochrana osobních údajů</a>
       </div>
     </div>
   </footer>
