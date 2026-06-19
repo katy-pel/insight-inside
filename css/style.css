@@ -1,32 +1,73 @@
 /* ============================================================
    Insight Inside s.r.o. — Design System
-   Verze: 2.0 (onepager) | 2026-06-07
+   Verze: 2.1 (onepager) | 2026-06-19
    Brandová modrá paleta dle logomanuálu (Václav Vančura):
      #133C64 (tmavá námořní) · #326D94 (střední modrá) · #B3CBD5 (světle modrá)
+   v2.1 — rozšíření logomanuálu: webová modrá řada (UI) + teplé akcenty
+          (zlatá / terakota) dle pravidla 60/30/10. Modrá zůstává dominantní;
+          teplé tóny jen jako 10% akcent (klíčová čísla, akcentní CTA).
    ============================================================ */
 
 /* ------------------------------------------------------------
    1. CSS Custom Properties
    ------------------------------------------------------------ */
 :root {
+  /* === Surová paleta (logomanuál + rozšíření) ============== */
+  /* Oficiální značkové modré — ZÁVAZNÉ, musí ladit s logem */
+  --ii-brand-light: #B3CBD5;
+  --ii-brand-mid:   #326D94;
+  --ii-brand-dark:  #133C64;
+
+  /* Modrá řada (rozšířená webová paleta — UI, struktura) */
+  --ii-blue-50:  #B3CBD5;
+  --ii-blue-100: #7EA2CA;
+  --ii-blue-300: #507BAA;
+  --ii-blue-500: #356397;
+  --ii-blue-700: #1C4F88;
+  --ii-blue-900: #103B6B;
+
+  /* Zlatá řada (akcent — 10 %) */
+  --ii-gold-100: #FFE897;
+  --ii-gold-300: #FFDE6D;
+  --ii-gold-500: #E8C345;
+  --ii-gold-700: #D0A81D;
+  --ii-gold-900: #A3810C;
+
+  /* Oranžová / terakota řada (akcent — 10 %) */
+  --ii-orange-100: #FFBB97;
+  --ii-orange-300: #FFA06D;
+  --ii-orange-500: #E87D45;
+  --ii-orange-700: #D05B1D;
+  --ii-orange-900: #A3410C;
+
+  /* === Sémantické tokeny (používej tyto) ================== */
   /* Barvy — vzdušná pozadí */
   --bg:          #f5f8fa;   /* velmi světle studená šeď — hlavní podklad */
   --bg-alt:      #e8f0f5;   /* světle modrošedá — alternativní sekce */
-  --bg-dark:     #133C64;   /* tmavá námořní — tmavé sekce, trust bar */
+  --bg-dark:     var(--ii-brand-dark);  /* tmavá námořní (oficiální) — tmavé sekce, trust bar */
   --bg-dark-alt: #0f3252;   /* tmavší námořní — karty na tmavém pozadí */
   --bg-footer:   #0e2a45;   /* nejhlubší námořní — footer */
 
   /* Text */
-  --heading:     #133C64;   /* nadpisy — tmavá námořní */
+  --heading:     var(--ii-brand-dark);  /* nadpisy — tmavá námořní */
   --text:        #21303f;   /* běžný text — tmavá slate */
   --text-muted:  #5b6b7a;   /* sekundární text */
   --text-light:  #dbe6ee;   /* text na tmavém pozadí */
   --text-faint:  #9fb6c6;   /* jemný text na tmavém pozadí */
 
-  /* Akcenty (brandová modrá) */
-  --accent:       #326D94;  /* střední modrá — CTA, odkazy, aktivní stavy */
-  --accent-dark:  #28597a;  /* tmavší modrá — hover */
-  --accent-light: #B3CBD5;  /* světle modrá — okraje, jemné akcenty, čísla na tmavém */
+  /* Akcenty — primární (modrá řada, UI / CTA / odkazy) */
+  --accent:       var(--ii-blue-500);   /* základní UI modrá — CTA, odkazy, aktivní stavy (AA) */
+  --accent-dark:  var(--ii-blue-700);   /* tmavší modrá — hover (AAA) */
+  --accent-light: var(--ii-brand-light);/* světle modrá — okraje, jemné akcenty, čísla na tmavém */
+
+  /* Akcenty — teplé (zlatá / terakota) — používej STŘÍDMĚ (10 %) */
+  --accent-warm:         var(--ii-gold-500);    /* zlatá — klíčové zvýraznění */
+  --accent-warm-strong:  var(--ii-gold-700);    /* zlatá hover / sytější */
+  --accent-warm-bright:  var(--ii-gold-300);    /* světlá zlatá — text/číslo na tmavém */
+  --accent-terra:        var(--ii-orange-500);  /* terakota — alternativní teplý akcent */
+  --accent-terra-strong: var(--ii-orange-700);  /* terakota hover */
+  --on-warm:             var(--ii-brand-dark);  /* text NA teplém akcentu — vždy tmavě modrý */
+
   --border:       #d4e0e8;  /* světlý okraj */
   --white:        #ffffff;
 
@@ -137,6 +178,16 @@ p:last-child { margin-bottom: 0; }
   margin-right: auto;
   margin-bottom: var(--sp-lg);
 }
+/* Zlatá linka pod nadpisem sekce — jednotný teplý akcent napříč webem */
+.section__header--center h2::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--accent-warm);
+  border-radius: 2px;
+  margin: var(--sp-sm) auto 0;
+}
 
 .section__label {
   display: inline-block;
@@ -207,6 +258,28 @@ p:last-child { margin-bottom: 0; }
   border-color: var(--white);
 }
 
+/* Akcentní (teplé) CTA — zlatá / terakota. Text VŽDY tmavě modrý (ne bílý). */
+.btn--accent {
+  background: var(--accent-warm);
+  color: var(--on-warm);
+  border: 2px solid var(--accent-warm);
+}
+.btn--accent:hover {
+  background: var(--accent-warm-strong);
+  border-color: var(--accent-warm-strong);
+  color: var(--on-warm);
+}
+.btn--terra {
+  background: var(--accent-terra);
+  color: var(--on-warm);
+  border: 2px solid var(--accent-terra);
+}
+.btn--terra:hover {
+  background: var(--accent-terra-strong);
+  border-color: var(--accent-terra-strong);
+  color: var(--on-warm);
+}
+
 .btn--sm { padding: 10px 20px; font-size: 0.875rem; }
 
 .btn-group {
@@ -228,12 +301,15 @@ p:last-child { margin-bottom: 0; }
   height: 68px;
   display: flex;
   align-items: center;
-  transition: background var(--transition), box-shadow var(--transition);
+  background: var(--white);              /* bílý pruh vždy — ladí s bílým pozadím loga */
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .nav.scrolled {
-  background: var(--bg);
-  box-shadow: 0 2px 12px rgba(44,44,44,0.08);
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(19,60,100,0.08);
+  border-bottom-color: transparent;
 }
 
 .nav__inner {
@@ -458,7 +534,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-head);
   font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 800;
-  color: var(--accent-light);
+  color: var(--accent-warm-bright);   /* zlatá na námořní — teplý 10% akcent (AAA kontrast) */
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -518,7 +594,7 @@ p:last-child { margin-bottom: 0; }
 /* Dark card (testimonial) */
 .card--dark {
   background: var(--bg-dark-alt);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--accent-warm);   /* zlatá linka na tmavém */
   box-shadow: none;
 }
 .card--dark:hover {
@@ -530,8 +606,8 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-head);
   font-size: 3rem;
   line-height: 1;
-  color: var(--accent);
-  opacity: 0.4;
+  color: var(--accent-warm);
+  opacity: 0.7;
   margin-bottom: -8px;
 }
 
@@ -656,10 +732,10 @@ p:last-child { margin-bottom: 0; }
 .steps::before {
   content: '';
   position: absolute;
-  top: 28px;
+  top: 45px;             /* střed zlatých badge (16px padding + 29px poloměr) */
   left: 10%;
   right: 10%;
-  height: 1px;
+  height: 2px;
   background: var(--border);
   z-index: 0;
 }
@@ -672,12 +748,20 @@ p:last-child { margin-bottom: 0; }
 }
 
 .step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--accent-warm);   /* zlatý uzel timeline */
+  color: var(--on-warm);            /* tmavě modré číslo — AAA */
   font-family: var(--font-head);
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--border);
+  font-size: 1.6rem;
+  font-weight: 800;
   line-height: 1;
   margin-bottom: var(--sp-sm);
+  box-shadow: var(--shadow-sm);
 }
 
 .step__title {
@@ -1251,7 +1335,7 @@ p:last-child { margin-bottom: 0; }
   color: var(--accent);
   margin-bottom: var(--sp-md);
   padding-bottom: 6px;
-  border-bottom: 2px solid var(--accent-light);
+  border-bottom: 3px solid var(--accent-warm);   /* zlatá linka — teplý akcent v hero */
 }
 .hero h1 .text-accent { color: var(--accent); }
 
@@ -1318,7 +1402,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: var(--radius-md);
   padding: var(--sp-md);
   box-shadow: var(--shadow-sm);
-  border-top: 4px solid var(--accent);
+  border-top: 4px solid var(--accent-warm);   /* zlatá horní linka — ladí se zlatým štítkem */
   transition: box-shadow var(--transition), transform var(--transition);
 }
 .case-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
@@ -1328,8 +1412,8 @@ p:last-child { margin-bottom: 0; }
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--bg-alt);
+  color: var(--on-warm);            /* tmavě modrý text na zlaté — teplý akcent (AAA) */
+  background: var(--ii-gold-100);
   padding: 4px 10px;
   border-radius: 20px;
   margin-bottom: var(--sp-sm);
@@ -1424,9 +1508,9 @@ p:last-child { margin-bottom: 0; }
 .contact-info--card h3 { color: var(--white); }
 .contact-info--card .contact-item a,
 .contact-info--card .contact-item span { color: var(--text-light); }
-.contact-info--card .contact-item a:hover { color: var(--accent-light); }
-.contact-info--card .contact-item svg { color: var(--accent-light); }
-.contact-info--card .directions p { color: var(--text-faint); border-left-color: var(--accent); }
+.contact-info--card .contact-item a:hover { color: var(--accent-warm-bright); }
+.contact-info--card .contact-item svg { color: var(--accent-warm-bright); }
+.contact-info--card .directions p { color: var(--text-faint); border-left-color: var(--accent-warm); }
 .contact-info--card .directions h4 { color: var(--white); }
 
 /* --- Placeholder markery (nedodaný obsah) ----------------- */
